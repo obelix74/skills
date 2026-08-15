@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --panel: #ffffff;
+    --ink: #1f1b16;
+    --muted: #6b6157;
+    --accent: #b4531f;      /* saffron/ochre — a nod to the tradition, kept tasteful */
+    --line: #e7ddd0;
+    --q-bg: #f2ebe0;
+    --link: #9c4514;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17140f;
+      --panel: #201c16;
+      --ink: #ece5da;
+      --muted: #a89d8f;
+      --accent: #e0894a;
+      --line: #322b22;
+      --q-bg: #262019;
+      --link: #e8a061;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+    padding: 2rem 1rem 5rem;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 2rem; }
+  header .kicker {
+    text-transform: uppercase; letter-spacing: .14em; font-size: .72rem;
+    color: var(--accent); font-weight: 700;
+  }
+  header h1 { font-size: 1.35rem; margin: .4rem 0 0; font-weight: 600; }
+  .question {
+    background: var(--q-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+  .question .label {
+    font-size: .7rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--muted); font-weight: 700; display: block; margin-bottom: .35rem;
+  }
+  .question p { margin: 0; font-style: italic; }
+  .answer { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.6rem 1.5rem; }
+  .answer h2 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; color: var(--accent); }
+  .answer h2:first-child { margin-top: 0; }
+  .answer p { margin: 0 0 1rem; }
+  .answer blockquote {
+    margin: 1rem 0; padding: .3rem 0 .3rem 1.1rem;
+    border-left: 3px solid var(--line); color: var(--muted); font-style: italic;
+  }
+  .answer a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+  .sanskrit { font-style: italic; color: var(--muted); }
+  .videos { margin-top: 2rem; }
+  .videos h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .6rem; }
+  .video {
+    display: flex; gap: .7rem; align-items: baseline;
+    padding: .6rem .2rem; border-top: 1px solid var(--line);
+  }
+  .video .play { color: var(--accent); font-size: .8rem; }
+  .video a { color: var(--link); text-decoration: none; }
+  .video a:hover { text-decoration: underline; }
+  footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 2.5rem; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker">Bhagavad Gita · Vedanta</div>
+      <h1>In the light of Swami Sarvapriyananda's teaching</h1>
+    </header>
+
+    <div class="question">
+      <span class="label">Your question</span>
+      <p>__QUESTION__</p>
+    </div>
+
+    <div class="answer">
+      __ANSWER_HTML__
+    </div>
+
+    <!-- Optional: a "Watch the sessions" block. Remove if not used.
+         Duplicate a .video row per cited session. -->
+    <div class="videos">
+      <h2>Watch these sessions</h2>
+      __VIDEO_LIST__
+    </div>
+
+    <footer>
+      Drawn from <a href="https://www.youtube.com/playlist?list=PL2imXor63HtS4ewIKryBL4ZVeiaH8Ij4R">Swami Sarvapriyananda's Bhagavad Gita series</a>, Vedanta Society of New York.
+    </footer>
+  </div>
+</body>
+</html>
